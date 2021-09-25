@@ -36,7 +36,7 @@ const discountedCost = +(totalCost - discountCost).toFixed(2);
 document.write("Discounted cost: " + discountedCost + "<br>");
 
 const cost = +(totalCost/2).toFixed(2);
-const netProfit = (cost - discountCost).toFixed(2);
+const netProfit = +(cost - discountCost).toFixed(2);
 if (netProfit > 0) {
    document.write("Yeeah, net profit is: " + netProfit + "<br>");
 } else {
