@@ -15,7 +15,7 @@ document.write("Total cost: " + totalCost + "<br>");
 const roundedTotalCost = Math.floor(priceMarker) + Math.floor(priceNotebook) + Math.floor(priceInk);
 document.write("Rounded  total cost: " + roundedTotalCost + "<br>");
 
-const inHundredTotalCost = Math.floor(totalCost/100) * 100;
+const inHundredTotalCost = Math.round(totalCost/100) * 100;
 document.write("Total cost in hundred: " + inHundredTotalCost + "<br>");
 
 const isRoundedTotalCostEven = !(roundedTotalCost % 2);
@@ -25,17 +25,17 @@ let paidMoney = 500;
 const changeMoney = paidMoney - totalCost;
 document.write("Сhange money from " + paidMoney + " UAH: " + changeMoney + "<br>");
 
-const averagePrice = (totalCost / 3).toFixed(2)
+const averagePrice = +(totalCost / 3).toFixed(2)
 document.write("Average price: " + averagePrice + "<br>");
 
 let discount = Math.trunc(Math.random() * 100);
 document.write("Client lucky to have random discount: " + discount + " % <br>");
 
-const discountCost = (discount * (totalCost/100)).toFixed(2);
-const discountedCost = (totalCost - discountCost).toFixed(2);
+const discountCost = +(discount * (totalCost/100)).toFixed(2);
+const discountedCost = +(totalCost - discountCost).toFixed(2);
 document.write("Discounted cost: " + discountedCost + "<br>");
 
-const cost = (totalCost/2).toFixed(2);
+const cost = +(totalCost/2).toFixed(2);
 const netProfit = (cost - discountCost).toFixed(2);
 if (netProfit > 0) {
    document.write("Yeeah, net profit is: " + netProfit + "<br>");
