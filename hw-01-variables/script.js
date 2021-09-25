@@ -43,7 +43,8 @@ if (netProfit > 0) {
    document.write("Oooh no, net profit is: " + netProfit + "<br>");
 }
 
-document.write(`<h2>Advanced</h2>
+document.write(
+`<h2>Advanced</h2>
 <i><b>Максимальна ціна: ${maxPrice} <br>
 Мінімальна ціна: ${minPrice} <br>
 Вартість всіх товарів: ${totalCost} <br>
@@ -54,4 +55,5 @@ document.write(`<h2>Advanced</h2>
 Cереднє значення цін: ${averagePrice} <br>
 Випадкова знижка: ${discount}% <br>
 Сума до оплати зі знижкою: ${discountedCost} <br>
-чистий прибуток: ${netProfit}</i></b>`)
+чистий прибуток: ${netProfit}</i></b>`
+)
