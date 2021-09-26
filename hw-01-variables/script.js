@@ -48,6 +48,6 @@ document.writeln(
 Сумa решти, при оплаті всіх товарів ${paidMoney} UAH: ${changeMoney} <br>
 Cереднє значення цін: ${averagePrice} <br>
 Випадкова знижка: ${discount}% <br>
-Сума до оплати зі знижкою: ${discountedCost} <br>
+Сума до сплати зі знижкою: ${discountedCost} <br>
 Чистий прибуток: ${netProfit}</i></b>`
 )
