@@ -1,6 +1,6 @@
-let priceMarker = 15.678;
-let priceNotebook = 123.965;
-let priceInk = 90.2345;
+const priceMarker = 15.678;
+const priceNotebook = 123.965;
+const priceInk = 90.2345;
 
 const maxPrice = Math.max(priceMarker, priceNotebook, priceInk);
 console.log(`Maximum price: ${maxPrice}`);
@@ -27,7 +27,7 @@ console.log(`Сhange money from ${paidMoney} UAH: ${changeMoney}`);
 const averagePrice = +(totalCost / 3).toFixed(2);
 console.log(`Average price: ${averagePrice}`);
 
-let discount = Math.trunc(Math.random() * 100);
+const discount = Math.trunc(Math.random() * 100);
 console.log(`Client lucky to have random discount: ${discount}%`);
 
 const discountCost = +(discount * (totalCost/100)).toFixed(2);
