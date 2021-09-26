@@ -1,51 +1,45 @@
-document.write("<h2>Base</h2>")
 let priceMarker = 15.678;
 let priceNotebook = 123.965;
 let priceInk = 90.2345;
 
 const maxPrice = Math.max(priceMarker, priceNotebook, priceInk);
-document.write("Maximum price: " + maxPrice + "<br>");
+console.log(`Maximum price: ${maxPrice}`);
 
 const minPrice = Math.min(priceMarker, priceNotebook, priceInk);
-document.write("Minimum price: " + minPrice + "<br>");
+console.log(`Minimum price: ${minPrice}`);
 
 const totalCost = priceMarker + priceNotebook + priceInk;
-document.write("Total cost: " + totalCost + "<br>");
+console.log(`Total cost: ${totalCost}`);
 
 const roundedTotalCost = Math.floor(priceMarker) + Math.floor(priceNotebook) + Math.floor(priceInk);
-document.write("Rounded  total cost: " + roundedTotalCost + "<br>");
+console.log(`Rounded  total cost: ${roundedTotalCost}`);
 
 const inHundredTotalCost = Math.round(totalCost/100) * 100;
-document.write("Total cost in hundred: " + inHundredTotalCost + "<br>");
+console.log(`Total cost in hundred: ${inHundredTotalCost}`);
 
 const isRoundedTotalCostEven = !(roundedTotalCost % 2);
-document.write("Rounded total cost is even: " + isRoundedTotalCostEven + "<br>");
+console.log(`Rounded total cost is even: ${isRoundedTotalCostEven}`);
 
 let paidMoney = 500;
 const changeMoney = paidMoney - totalCost;
-document.write("Сhange money from " + paidMoney + " UAH: " + changeMoney + "<br>");
+console.log(`Сhange money from ${paidMoney} UAH: ${changeMoney}`);
 
 const averagePrice = +(totalCost / 3).toFixed(2);
-document.write("Average price: " + averagePrice + "<br>");
+console.log(`Average price: ${averagePrice}`);
 
 let discount = Math.trunc(Math.random() * 100);
-document.write("Client lucky to have random discount: " + discount + " % <br>");
+console.log(`Client lucky to have random discount: ${discount}%`);
 
 const discountCost = +(discount * (totalCost/100)).toFixed(2);
 const discountedCost = +(totalCost - discountCost).toFixed(2);
-document.write("Discounted cost: " + discountedCost + "<br>");
+console.log(`Discounted cost: ${discountedCost}`);
 
 const cost = +(totalCost/2).toFixed(2);
 const netProfit = +(cost - discountCost).toFixed(2);
-if (netProfit > 0) {
-   document.write("Yeeah, net profit is: " + netProfit + "<br>");
-} else {
-   document.write("Oooh no, net profit is: " + netProfit + "<br>");
-};
+console.log(netProfit > 0 ? `Yeeah, net profit is: ${netProfit}` : `Oooh no, net profit is: ${netProfit}`);
 
-document.write(
-`<h2>Advanced</h2>
-<i><b>Максимальна ціна: ${maxPrice} <br>
+document.writeln(
+`<i><b>Максимальна ціна: ${maxPrice} <br>
 Мінімальна ціна: ${minPrice} <br>
 Вартість всіх товарів: ${totalCost} <br>
 Округленна вартість всіх товарів: ${roundedTotalCost} <br>
@@ -55,5 +49,5 @@ document.write(
 Cереднє значення цін: ${averagePrice} <br>
 Випадкова знижка: ${discount}% <br>
 Сума до оплати зі знижкою: ${discountedCost} <br>
-чистий прибуток: ${netProfit}</i></b>`
+Чистий прибуток: ${netProfit}</i></b>`
 )
