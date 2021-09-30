@@ -7,11 +7,8 @@ do {
 
 do {
   m = prompt('Enter second number M.').trim();
-<<<<<<< HEAD
 } while (isNaN(m) || !Number.isInteger(+m) || m.length === 0);
-=======
-} while (isNaN(m) || !Number.isInteger(+m) || n.length === 0);
->>>>>>> 77525c6311362b00403c0bda10cbe1b02aa1f4b5
+
 
 const minNumber = Math.min(n, m);
 const maxNumber = Math.max(n, m);
