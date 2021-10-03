@@ -51,7 +51,7 @@ const convertCurrency = (money) => {
 }
 
 //8
-const getRandomPassword = (number = 8) => isNaN(number) !== 0 ? Math.trunc(Math.random() * 10**(+number) ) : "Put number, please";
+const getRandomPassword = (number = 8) => isNaN(number) !== 0 ? Math.trunc(Math.random() * 10 ** (+number) ) : "Put number, please";
 
 //9
 const deleteLetters = (letter, sentence) => {
