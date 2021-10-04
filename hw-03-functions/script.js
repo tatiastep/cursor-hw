@@ -1,17 +1,24 @@
 //1
 const getMaxDigit = (number) => {
-   let digits = number.toString().split(''); 
+   const digits = number.toString().split(''); 
    let maxDigit = Math.max(...digits);
    return maxDigit;
 }
 
 //2
 const getExponentiation = (number, exponent) => {
+   if (exponent === 0) {
+      return 1;
+   }
    let result = 1;
-   for (let i = 1; i <= exponent; i++) {
+   for (let i = 1; i <= Math.abs(exponent); i++) {
       result *= number;
    }
-   return result;
+   if (exponent > 0) {
+      return result;
+   }
+   if (exponent < 0)
+      return 1 / result;
 }
 
 //3
@@ -38,7 +45,7 @@ const countLetter = (letter, word) => {
 //7
 const convertCurrency = (money) => {
    let convertedSum = 0;
-   let value = parseInt(money);
+   const value = parseInt(money);
    if ((money.toUpperCase().trim()).endsWith('$')) {
       convertedSum = value * 25;
       return convertedSum + " грн."
@@ -63,8 +70,8 @@ const deleteLetters = (letter, sentence) => {
 
 //10
 const isPalyndrom = (string) => {
-   let stringInitial = string.trim().toLowerCase();
-   let stringReverse = stringInitial.split('').reverse().join('');
+   const stringInitial = string.trim().toLowerCase();
+   const stringReverse = stringInitial.split('').reverse().join('');
    for (let i = 0; i < stringInitial.length; i++) {
       let result = stringInitial[i] === stringReverse[i];
       return result;
@@ -72,14 +79,14 @@ const isPalyndrom = (string) => {
 }
 
 document.writeln(`
-Функція №1 - <i>getMaxDigit(1736)</i> : ${getMaxDigit(1736)} </br>
-Функція №2 - <i>getExponentiation(3, 3)</i> : ${getExponentiation(3, 3)} </br>
-Функція №3 - <i>getCapitalizedName('вЛаД')</i> : ${getCapitalizedName('вЛаД')} </br>
-Функція №4 - <i>getSalaryAfterTax(1000)</i> : ${getSalaryAfterTax(1000)} </br>
-Функція №5 - <i>getRandomNumber(3, 10)</i> : ${getRandomNumber(3, 10)} </br>
-Функція №6 - <i>countLetter('c', 'Асталавіста')</i> : ${countLetter('с', 'Асталавіста')} </br>
-Функція №7 - <i>convertCurrency('100$')</i> : ${convertCurrency('100$')} </br>
-Функція №8 - <i>getRandomPassword(6)</i> : ${getRandomPassword(6)} </br>
-Функція №9 - <i>deleteLetters('а', 'Атлантида')</i> : ${deleteLetters('а', 'Атлантида')} </br>
-Функція №10 - <i>isPalyndrom('Я несу гусеня')</i> : ${isPalyndrom('Я несу гусеня')} </br>
+Функція №1 - <i>getMaxDigit</i>(1736): ${getMaxDigit(1736)} </br>
+Функція №2 - <i>getExponentiation</i>(2, -3): ${getExponentiation(2, -3)} </br>
+Функція №3 - <i>getCapitalizedName</i>('вЛаД'): ${getCapitalizedName('вЛаД')} </br>
+Функція №4 - <i>getSalaryAfterTax</i>(1000): ${getSalaryAfterTax(1000)} </br>
+Функція №5 - <i>getRandomNumber</i>(3, 10): ${getRandomNumber(3, 10)} </br>
+Функція №6 - <i>countLetter</i>('c', 'Асталавіста'): ${countLetter('с', 'Асталавіста')} </br>
+Функція №7 - <i>convertCurrency</i>('100$'): ${convertCurrency('100$')} </br>
+Функція №8 - <i>getRandomPassword</i>(): ${getRandomPassword()} </br>
+Функція №9 - <i>deleteLetters</i>('а', 'Атлантида'): ${deleteLetters('а', 'Атлантида')} </br>
+Функція №10 - <i>isPalyndrom</i>('Я несу гусеня'): ${isPalyndrom('Я несу гусеня')} </br>
 `)
