@@ -13,12 +13,11 @@ const getExponentiation = (number, exponent) => {
    let result = 1;
    for (let i = 1; i <= Math.abs(exponent); i++) {
       result *= number;
-   }
-   if (exponent > 0) {
+   } if (exponent > 0) {
       return result;
-   }
-   if (exponent < 0)
+   } else {
       return 1 / result;
+   } 
 }
 
 //3
@@ -86,7 +85,7 @@ document.writeln(`
 Функція №5 - <i>getRandomNumber</i>(3, 10): ${getRandomNumber(3, 10)} </br>
 Функція №6 - <i>countLetter</i>('c', 'Асталавіста'): ${countLetter('с', 'Асталавіста')} </br>
 Функція №7 - <i>convertCurrency</i>('100$'): ${convertCurrency('100$')} </br>
-Функція №8 - <i>getRandomPassword</i>(): ${getRandomPassword()} </br>
+Функція №8 - <i>getRandomPassword</i>(6): ${getRandomPassword(6)} </br>
 Функція №9 - <i>deleteLetters</i>('а', 'Атлантида'): ${deleteLetters('а', 'Атлантида')} </br>
 Функція №10 - <i>isPalyndrom</i>('Я несу гусеня'): ${isPalyndrom('Я несу гусеня')} </br>
 `)
