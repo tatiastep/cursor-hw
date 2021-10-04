@@ -1,7 +1,7 @@
 //1
 const getMaxDigit = (number) => {
    const digits = number.toString().split(''); 
-   let maxDigit = Math.max(...digits);
+   const maxDigit = Math.max(...digits);
    return maxDigit;
 }
 
