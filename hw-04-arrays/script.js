@@ -39,8 +39,3 @@ console.log(pairs);
 console.log(pairsWithThemes);
 console.log(gradedStudents);
 console.log(gradedPairsWithThemes);
-
-console.log(`Arrays after:`);
-console.log(students);
-console.log(themes);
-console.log(marks);
