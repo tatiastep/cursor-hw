@@ -21,7 +21,7 @@ const joinPairsWithThemes = (pairs, themes) => {
 const addMarks = (students, marks) => students.map((student, i) => [student, marks[i]]);
 
 // №4 Поставте кожній парі випадкову оцінку (від 1 до 5) за проєкт (тут функція буде не чистою, але не повинна мутувати масив)
-const addRandomMarks = (pairsWithThemes, minMark = 1, maxMark = 5) =>{
+const addRandomMarks = (pairsWithThemes, minMark = 1, maxMark = 5) => {
    const randomMmark = pairsWithThemes.map((pairs) =>
    [...pairs, Math.floor(Math.random() * (maxMark - minMark + 1) + minMark)]);
    return randomMmark;
