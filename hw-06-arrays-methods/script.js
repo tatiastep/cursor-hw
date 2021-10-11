@@ -17,7 +17,7 @@ const getModa = (...numbers) => {
          }
       }
       if (matchCounter > counter) {
-         mode = numbers[i];
+         mode = intNumbers[i];
          counter = matchCounter;
       }
    }
