@@ -62,13 +62,11 @@ const getDividedByFive = (...numbers) => numbers.filter(num => num % 5 === 0);
 
 // 8 - Створіть функцію replaceBadWords(string) – яка 1) розіб'є фразу на слова, 2) замінить погані слова на зірочки (*). 
 const replaceBadWords = (string) => {
-    let badWords = ['shit', 'fuck', 'ass'];
-    let words = string.split(' ');
-    for (let i = 0; i < badWords.length; i++) {
-        words = words.map((word) => {
-            return word.replace(badWords[i], '*' .repeat(badWords[i].length));
-        })
-   }
+   let badWords = ['shit', 'fuck', 'ass'];
+   let words = string.split(' ');
+   badWords.forEach(badWord =>
+      words = words.map((word) => word.replace(badWord, '*' .repeat(badWord.length)))
+      );
    return words.join(' ');
 };
 
@@ -77,7 +75,6 @@ const divideByThree = (word) =>
    (word.length < 3)
    ? word
    : word.toLowerCase().trim().match(/.{1,3}/g);
-
 
 
 const randomArray = getRandomArray(15, 1, 100);
