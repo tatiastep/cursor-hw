@@ -3,37 +3,37 @@ const latvia = { tax: 0.25, middleSalary: 1586, vacancies: 3921 };
 const litva = { tax: 0.15, middleSalary: 1509, vacancies: 1114 };
 
 function getMyTaxes(salary) {
-   return parseFloat(this.tax * salary).toFixed(2);
+   return this.tax * salary;
 };
 
 function getMiddleTaxes() {
-   return parseFloat(this.tax * this.middleSalary).toFixed(2);
+   return this.tax * this.middleSalary;
 };
 
 function getTotalTaxes() {
-   return parseFloat(this.tax * this.middleSalary * this.vacancies).toFixed(2);
+   return this.tax * this.middleSalary * this.vacancies;
 };
 
-function getMySalary(country) {
-   setInterval(interval, 10000);
-   function interval() {
-      const mySalary = {};
-      const minSalary = 1500;
-      const maxSalary = 2000;
+function getMySalary() {
+   const mySalary = {};
+   const minSalary = 1500;
+   const maxSalary = 2000;
 
-      mySalary.salary = parseFloat((Math.random() * (maxSalary - minSalary) + minSalary).toFixed(2));
-      mySalary.taxes = parseFloat((country.tax * mySalary.salary).toFixed(2));
-      mySalary.profit = parseFloat((mySalary.salary - mySalary.taxes).toFixed(2));
+   mySalary.salary = Math.floor(Math.random() * (maxSalary - minSalary) + minSalary);
+   mySalary.taxes = this.tax * mySalary.salary;
+   mySalary.profit = mySalary.salary - mySalary.taxes;
 
-      return console.log(mySalary);
-   }
+   return mySalary;
 };
+
+const mySalaryLog = setInterval(() => console.log(getMySalary.call(litva)), 10000);
+setTimeout(() => clearInterval(mySalaryLog), 100000);
 
 console.log(`
 1.Функція, яка рахує скільки податків ви заплатите як IT-спеціаліст:
-в Україні з зарплати 15000.00 грн.: ${getMyTaxes.call(ukraine, 15000)} грн.
-в Латвії з зарплати 15000.00 грн.: ${getMyTaxes.call(latvia, 15000)} грн.
-в Литві з зарплати 15000.00 грн.:  ${getMyTaxes.call(litva, 15000)} грн.
+в Україні з зарплати 15000 грн.: ${getMyTaxes.call(ukraine, 15000)} грн.
+в Латвії з зарплати 15000 грн.: ${getMyTaxes.call(latvia, 15000)} грн.
+в Литві з зарплати 15000 грн.:  ${getMyTaxes.call(litva, 15000)} грн.
 `);
 
 console.log(`
@@ -53,4 +53,3 @@ console.log(`
 console.log(`
 4.Функція, яка буде писати в консоль об'єкт виду: { salary: number, taxes: number, profit: number } кожні 10 секунд.
 `);
-getMySalary(ukraine)
