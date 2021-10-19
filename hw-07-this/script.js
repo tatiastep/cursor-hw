@@ -15,7 +15,7 @@ function getTotalTaxes() {
 };
 
 function getMySalary(country) {
-   setInterval(interval, 5000);
+   setInterval(interval, 10000);
    function interval() {
       const mySalary = {};
       const minSalary = 1500;
