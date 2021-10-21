@@ -52,7 +52,7 @@ class BudgetStudent extends Student {
       }, 30000);
    }
    getScholarship() {
-      if (this.marks !== null && this.marks.length > 0 && this.getAverageMark() >= 4) {
+      if (this.marks !== null && this.getAverageMark() >= 4) {
          return `Ви отримали ${this.scholarship} грн.стипендії`;
       } else {
          return `Ви не можете отримати стипендії`;
@@ -85,6 +85,7 @@ console.log(`
 BudgetStudent
 Інформаця про студента: ${budgetStudent.getInfo()}
 Оцінки: ${budgetStudent.getMarks}
+${budgetStudent.fullName}, ${budgetStudent.getScholarship()}
 Поставлено нову оцінку: ${budgetStudent.setMarks = 4}
 Середній бал: ${budgetStudent.getAverageMark()}
 ${budgetStudent.fullName}, ${budgetStudent.getScholarship()}
