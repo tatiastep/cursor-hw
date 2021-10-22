@@ -6,35 +6,34 @@ class Student {
       this.course = course;
       this.fullName = fullName;
       this.marks = [5, 4, 4, 5];
+      this.isDismissed = false;
    }
 
    getInfo() {
-      return `Студент ${this.course}го курсу в ${this.university}, ${this.fullName}`;
+      return `Студент ${this.course}го курсу ВНЗ ${this.university} ${this.fullName}`;
    }
 
    get getMarks() {
-      return this.marks;
+      return this.isDismissed ? null : this.marks;
    }
 
    set setMarks(mark) {
-      return this.marks !== null
-         ? this.marks.push(mark)
-         : this.marks;
+      return this.isDismissed ? null : this.marks.push(mark);
    }
 
    getAverageMark() {
-      return this.marks !== null
-         ? this.marks.reduce((acc, mark) => acc + mark, 0) / this.marks.length
-         : this.marks;
+      return this.isDismissed
+         ? null
+         : this.marks.reduce((acc, mark) => acc + mark, 0) / this.marks.length;
    }
 
    dismiss() {
-      this.marks = null;
+      this.isDismissed = true;
       return `Студент ${this.fullName} відрахований`;
    }
 
    recover() {
-      this.marks = [];
+      this.isDismissed = false;
       return `Студент ${this.fullName} поновлений`;
    }
 };
@@ -47,19 +46,19 @@ class BudgetStudent extends Student {
    constructor(university, course, fullName) {
       super(university, course, fullName);
       this.marks = [];
+      this.isDismissed = false;
       setInterval(() => {
          console.log(this.getScholarship());
       }, 30000);
    }
    getScholarship() {
-      if (this.marks !== null && this.getAverageMark() >= 4) {
+      if (!this.isDismissed && this.getAverageMark() >= 4) {
          return `Ви отримали ${this.scholarship} грн.стипендії`;
       } else {
          return `Ви не можете отримати стипендії`;
       }
    }
-
-}
+};
 
 const budgetStudent = new BudgetStudent('Харківський національний університет радіоелектроніки', '1', 'Василь Бондар');
 
@@ -67,33 +66,30 @@ console.log(`
 Student
 Інформаця про студента: ${student.getInfo()}
 Оцінки: ${student.getMarks}
-Поставлено нову оцінку: ${student.setMarks = 5}
+Поставлено оцінку: ${student.setMarks = 5}
 Оцінки: ${student.getMarks}
 Середній бал: ${student.getAverageMark()}
 ${student.dismiss()}
 Оцінки: ${student.getMarks}
-Поставлено нову оцінку: ${student.setMarks = 2}
+Поставлено оцінку: ${student.setMarks = 2}
 Оцінки: ${student.getMarks}
 ${student.recover()}
 Оцінки: ${student.getMarks}
-Поставлено нову оцінку: ${student.setMarks = 5}
-Поставлено нову оцінку: ${student.setMarks = 4}
+Поставлено оцінку: ${student.setMarks = 3}
 Оцінки: ${student.getMarks}
 `);
 
 console.log(`
 BudgetStudent
 Інформаця про студента: ${budgetStudent.getInfo()}
-Оцінки: ${budgetStudent.getMarks}
-${budgetStudent.fullName}, ${budgetStudent.getScholarship()}
-Поставлено нову оцінку: ${budgetStudent.setMarks = 4}
+Поставлено оцінку: ${budgetStudent.setMarks = 4}
 Середній бал: ${budgetStudent.getAverageMark()}
 ${budgetStudent.fullName}, ${budgetStudent.getScholarship()}
-Поставлено нову оцінку: ${budgetStudent.setMarks = 1}
+Поставлено оцінку: ${budgetStudent.setMarks = 1}
 Середній бал: ${budgetStudent.getAverageMark()}
 ${budgetStudent.fullName}, ${budgetStudent.getScholarship()}
 ${budgetStudent.dismiss()}
 ${budgetStudent.fullName}, ${budgetStudent.getScholarship()}
 
-Студент ${budgetStudent.fullName} нижче можете отримати оновлені дані по стипендії через 30 секунд:
+Нижче можете отримати оновлені дані по стипендії студента ${budgetStudent.fullName} через 30 секунд:
 `);
