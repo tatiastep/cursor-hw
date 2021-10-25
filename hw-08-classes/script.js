@@ -5,7 +5,7 @@ class Student {
       this.university = university;
       this.course = course;
       this.fullName = fullName;
-      this.marks = [5, 4, 4, 5];
+      this.allMarks = [5, 4, 4, 5];
       this.isDismissed = false;
    }
 
@@ -13,18 +13,18 @@ class Student {
       return `Студент ${this.course}го курсу ВНЗ ${this.university} ${this.fullName}`;
    }
 
-   get getMarks() {
-      return this.isDismissed ? null : this.marks;
+   get marks() {
+      return this.isDismissed ? null : this.allMarks;
    }
 
-   set setMarks(mark) {
-      return this.isDismissed ? null : this.marks.push(mark);
+   set marks(mark) {
+      return this.isDismissed ? null : this.allMarks.push(mark);
    }
 
    getAverageMark() {
       return this.isDismissed
          ? null
-         : this.marks.reduce((acc, mark) => acc + mark, 0) / this.marks.length;
+         : this.allMarks.reduce((acc, mark) => acc + mark, 0) / this.allMarks.length;
    }
 
    dismiss() {
@@ -45,7 +45,7 @@ class BudgetStudent extends Student {
    scholarship = 1400;
    constructor(university, course, fullName) {
       super(university, course, fullName);
-      this.marks = [];
+      this.allMarks = [];
       this.isDismissed = false;
       setInterval(() => {
          console.log(this.getScholarship());
@@ -65,31 +65,30 @@ const budgetStudent = new BudgetStudent('Харківський націонал
 console.log(`
 Student
 Інформаця про студента: ${student.getInfo()}
-Оцінки: ${student.getMarks}
-Поставлено оцінку: ${student.setMarks = 5}
-Оцінки: ${student.getMarks}
+Оцінки: ${student.marks}
+Поставлено оцінку: ${student.marks = 5}
+Оцінки: ${student.marks}
 Середній бал: ${student.getAverageMark()}
 ${student.dismiss()}
-Оцінки: ${student.getMarks}
-Поставлено оцінку: ${student.setMarks = 2}
-Оцінки: ${student.getMarks}
+Оцінки: ${student.marks}
+Поставлено оцінку: ${student.marks = 2}
+Оцінки: ${student.marks}
 ${student.recover()}
-Оцінки: ${student.getMarks}
-Поставлено оцінку: ${student.setMarks = 3}
-Оцінки: ${student.getMarks}
+Оцінки: ${student.marks}
+Поставлено оцінку: ${student.marks = 3}
+Оцінки: ${student.marks}
 `);
 
 console.log(`
 BudgetStudent
 Інформаця про студента: ${budgetStudent.getInfo()}
-Поставлено оцінку: ${budgetStudent.setMarks = 4}
+Поставлено оцінку: ${budgetStudent.marks = 4}
 Середній бал: ${budgetStudent.getAverageMark()}
 ${budgetStudent.fullName}, ${budgetStudent.getScholarship()}
-Поставлено оцінку: ${budgetStudent.setMarks = 1}
+Поставлено оцінку: ${budgetStudent.marks = 1}
 Середній бал: ${budgetStudent.getAverageMark()}
 ${budgetStudent.fullName}, ${budgetStudent.getScholarship()}
 ${budgetStudent.dismiss()}
 ${budgetStudent.fullName}, ${budgetStudent.getScholarship()}
-
 Нижче можете отримати оновлені дані по стипендії студента ${budgetStudent.fullName} через 30 секунд:
 `);
