@@ -18,7 +18,8 @@ function generateBlocksInterval() {
   }
 
   setInterval(() => {
-    let blocks = document.querySelectorAll('.block');
+    const blocks = document.querySelectorAll('.block');
+
     for (const block of blocks) {
       block.style.backgroundColor = randomColor();
     }
