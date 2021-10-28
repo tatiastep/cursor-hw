@@ -1,7 +1,4 @@
-// Зродіть 25 квадратів розміру 50х50 пікселів кожен, зафарбовані у випадковий колір.Квадрати мають розташовуватись по 5 в ряд.
-// Щоб квадрати з'явились на сторінці, необхідно викликати функцію generateBlocks();
-
-function generateBlocks() {
+function generateBlocksInterval() {
   const mainBlock = document.createElement('div');
   document.body.append(mainBlock);
   mainBlock.classList.add('main_block');
@@ -19,8 +16,15 @@ function generateBlocks() {
       block.style.backgroundColor = randomColor();
     }
   }
+
+  setInterval(() => {
+    let blocks = document.querySelectorAll('.block');
+    for (const block of blocks) {
+      block.style.backgroundColor = randomColor();
+    }
+  }, 1000)
 };
 
-generateBlocks();
+generateBlocksInterval();
 
 
