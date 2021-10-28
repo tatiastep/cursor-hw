@@ -1,0 +1,11 @@
+.main_block {
+  height: 250px;
+  width: 250px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.block {
+  height: 50px;
+  width: 50px;
+}
