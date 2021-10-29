@@ -19,10 +19,7 @@ function generateBlocksInterval() {
 
   setInterval(() => {
     const blocks = document.querySelectorAll('.block');
-
-    for (const block of blocks) {
-      block.style.backgroundColor = randomColor();
-    }
+    blocks.forEach(block => block.style.backgroundColor = randomColor())
   }, 1000)
 };
 
