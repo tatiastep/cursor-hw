@@ -11,7 +11,7 @@ function generateBlocksInterval() {
   for (let i = 0; i < 5; i++) {
     for (let j = 0; j < 5; j++) {
       const block = document.createElement('div');
-      mainBlock.append(block);
+      mainBlock.appendChild(block);
       block.classList.add('block');
       block.style.backgroundColor = randomColor();
     }
