@@ -1,6 +1,6 @@
 html {
   font-size: 10px;
-  background: url("img/background.jpg") bottom center;
+  background: url("img/background.jpg") bottom center no-repeat;
   background-size: cover;
 }
 
@@ -13,40 +13,40 @@ html {
 
 .keys {
   display: flex;
-  flex: 1;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
 }
 
 .key {
-  border: 0.4rem solid black;
-  border-radius: 0.5rem;
-  margin: 1rem;
-  font-size: 1.5rem;
-  padding: 1rem 0.5rem;
-  transition: all 0.07s ease;
-  width: 10rem;
+  border: 4px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 15px;
+  padding: 15px 5px;
+  transition: all 0.8s ease;
+  width: 100px;
   text-align: center;
   color: white;
-  background: rgba(0, 0, 0, 0.4);
-  text-shadow: 0 0 0.5rem black;
+  background: rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 5px black;
+  cursor: pointer;
 }
 
 .playing {
-  transform: scale(1.1);
+  transform: scale(1.2);
   border-color: #ffc600;
-  box-shadow: 0 0 1rem #ffc600;
+  box-shadow: 0 0 10px #ffc600;
 }
 
 kbd {
   display: block;
-  font-size: 4rem;
+  font-size: 15px;
+  margin-top: 5px;
 }
 
 .sound {
-  font-size: 1.2rem;
-  text-transform: none;
-  letter-spacing: 0.1rem;
+  font-size: 30px;
+  letter-spacing: 1px;
   color: #ffc600;
 }
