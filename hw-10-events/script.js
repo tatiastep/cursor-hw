@@ -1,3 +1,9 @@
+function removeTransition(e) {
+  if (e.propertyName === 'transform') {
+    this.classList.remove('playing');
+  }
+};
+
 function playAudioWithKeydown(e) {
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
@@ -18,12 +24,7 @@ function playAudio(audio) {
   audio.play();
 };
 
-function removeTransition(e) {
-  if (e.propertyName === 'transform') {
-    console.log(this);
-    this.classList.remove('playing');
-  }
-};
+
 
 document.addEventListener('click', playAudioWithMouseClick);
 document.addEventListener('keydown', playAudioWithKeydown);
